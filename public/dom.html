@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>DOM XSS Test</h2>
+
+    <input id="msg" placeholder="type anything">
+    <button onclick="write()">Send</button>
+
+    <p id="out"></p>
+
+    <script>
+        function write() {
+            const value = document.getElementById("msg").value;
+
+            // DOM XSS の危険な書き方
+            document.getElementById("out").innerHTML = value;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Board (XSS vulnerable)</h1>
+  <div id="content">Loading...</div>
+
+  <script>
+    fetch('/messages')
+      .then(res => res.json())
+      .then(data => {
+        const last = data[data.length - 1] || "(empty)";
+        document.getElementById('content').innerHTML = last;
+      });
+  </script>
+</body>
+</html>
+

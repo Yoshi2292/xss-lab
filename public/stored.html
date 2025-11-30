@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Stored XSS Board</h2>
+    <form action="/post" method="POST">
+        <input name="message" placeholder="write a message">
+        <button>Post</button>
+    </form>
+
+    <h3>Messages</h3>
+    <div id="board"></div>
+
+    <script>
+        async function load() {
+            const res = await fetch("/messages");
+            const list = await res.json();
+
+            const board = document.getElementById("board");
+            board.innerHTML = list.map(m => `<p>${m}</p>`).join("");
+        }
+
+        load();
+    </script>
+</body>
+</html>
+
