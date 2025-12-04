@@ -8,6 +8,15 @@ const port = 3000;
 // メッセージ保存用（メモリ保持）
 const messages = [];
 
+// ---- CSP を付与して XSS を難しくする ----
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self'"
+  );
+  next();
+});
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "/public")));
 

@@ -4,15 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
     "dompurify": "^3.3.0",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "jsdom": "^27.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoshi2292/xss-lab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yoshi2292/xss-lab/issues"
+  },
+  "homepage": "https://github.com/yoshi2292/xss-lab#readme"
 }
